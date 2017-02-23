@@ -1,9 +1,10 @@
 ---
 isChild: true
-title: Namespace
+title:   Namespace
+anchor:  namespaces
 ---
 
-## Namespace {#namespace_title}
+## Namespace {#namespaces_title}
 
 Come menzionato sopra, la comunità PHP ha molti sviluppatori che creano molto
 codice. Questo significa che il codice PHP di una libreria potrebbe usare lo
@@ -19,12 +20,28 @@ separati. È così semplice.
 È importante inserire il codice in un namespace in modo che possa essere usato
 da altri sviluppatori senza paura che esso collida con altre librerie.
 
-Un modo consigliato per usare i namespace è descritto nel [PSR-0][psr0], che
-si pone come obiettivo quello di creare una convenzione standard per i file, le
-classi e i namespace, consentendo così il plug-and-play del codice.
+Nel dicembre 2013 il PHP-FIG ha creato un nuovo standard per l'autoloading:
+[PSR-4][psr4], che un giorno probabilmente rimpiazzerà PSR-0. Attualmente
+entrambi sono ancora utilizzabili, perché PSR-4 richiede PHP 5.3 e molti
+progetti che supportano solo PHP 5.2 attualmente implementano PSR-0. Se userai
+un autoloader standard per una nuova applicazione o pacchetto allora vorrai
+quasi sicuramente dare un'occhiata a PSR-4.
+
+Un modo raccomandato di usare i namespace è delineato nel [PSR-4], che mira a
+fornire una convenzione standard per la i nomi di file, classi e namespace, in
+modo da consentire la scrittura di codice plug-and-play.
+
+Nell'ottobre 2014 il PHP-FIG ha deprecato il precedente standard di autoloading,
+[PSR-0][psr0], che è stato sostituito con [PSR-4][psr4]. Attualmente entrambi
+sono ancora utilizzabili, giacché PSR-4 richiede PHP 5.3 e molti progetti solo
+per PHP 5.2 implementano attualmente PSR-0. Se hai intenzione di usare uno
+standard di autoloading per una nuova applicazione o pacchetto, probabilmente
+PSR-4 è la scelta giusta.
 
 * [Leggi sui namespace][namespaces]
 * [Leggi il PSR-0][psr0]
+* [Leggi il PSR-4][psr4]
 
-[namespaces]: http://php.net/manual/en/language.namespaces.php
+[namespaces]: http://php.net/language.namespaces
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md

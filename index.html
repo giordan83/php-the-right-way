@@ -1,17 +1,19 @@
 ---
 layout: default
-description: "Una raccolta di migliori pratiche, standard di codifica accettati e link a tutorial PHP di qualità sparsi per il Web."
+description: "Una raccolta veloce e semplice da leggere di migliori pratiche, standard di codifica accettati e link a tutorial PHP di qualità sparsi per il Web."
+sitemap: true
 ---
 
 {% capture welcome_content %}{% include welcome.md %}{% endcapture %}
 {{ welcome_content|markdownify }}
 
-{% capture backtotop %}[Torna su](#top){.top}{% endcapture %}
+
+{% capture backtotop %}[Torna su](#top){:.top}{% endcapture %}
 {% for post in site.posts reversed %}
     {% if post.isChild != true and loop.first != true %}
     {{ backtotop|markdownify }}
     {% endif %}
-    <div id="{{ post.title | downcase | replace:' ','_' | replace:'(','' | replace:')','' | replace:'.','' | replace:'-','' }}">
+    <div id="{{ post.anchor }}">
     {{ post.content }}
     </div>
 {% endfor %}
